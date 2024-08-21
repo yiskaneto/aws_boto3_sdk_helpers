@@ -5,6 +5,7 @@ sys.path.append( '../')
 from common.args import elastic_beanstalk_args
 from common.boto_client_declaration import elastic_beanstalk_client
 from common.logging_setup import logger
+from common.autoscaling import update_auto_scaling_group.update_health_check_type
 
 args, eb = elastic_beanstalk_args(), elastic_beanstalk_client(elastic_beanstalk_args())
 
