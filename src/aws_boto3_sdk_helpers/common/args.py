@@ -53,5 +53,23 @@ def cloudwatch_logs_args():
     return args
 #################################################################################
 
+## Elastic Beanstalk
+###############################################################################
+def elastic_beanstalk_args():
+    """
+    Description
+    -----------
+    Initializes the arguments needed to excecute operations on a given elastic beanstall boto3 client.
+
+    Example
+    -------
+    an_elastic_beanstalk_function(cloudwatch_logs_args())
+    """
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--aws-region", required=True, help=AWS_REGION_CONST)
+    args = parser.parse_args()
+    return args
+#################################################################################
+
 if __name__ == "__main__":
-    print("Test")
+    print("Argument script file, nothing to show for now.")

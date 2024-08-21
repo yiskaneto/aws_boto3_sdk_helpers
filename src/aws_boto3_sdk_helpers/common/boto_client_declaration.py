@@ -28,3 +28,40 @@ def cloudwatch_logs_client(args):
     logs = boto3.client('logs', region_name=args.aws_region)
     return logs
 
+def elastic_beanstalk_client(args):
+    """
+    Description
+    -----------
+    Initialize the Elastic Beanstal client for the Python AWS SDK.
+
+    Parameters
+    ------------
+        args: parser.parse_args()
+            The args object needed to initialize the client object.
+
+    Return
+    -----------
+        age : boto3.client()
+            Configured boto3 client.
+    """
+    eb = boto3.client('elasticbeanstalk', region_name=args.aws_region)
+    return eb
+
+def autoscaling_client(args):
+    """
+    Description
+    -----------
+    Initialize the autoscaling client for the Python AWS SDK.
+
+    Parameters
+    ------------
+        args: parser.parse_args()
+            The args object needed to initialize the client object.
+
+    Return
+    -----------
+        age : boto3.client()
+            Configured boto3 client.
+    """
+    asg = boto3.client('autoscaling', region_name=args.aws_region)
+    return asg
