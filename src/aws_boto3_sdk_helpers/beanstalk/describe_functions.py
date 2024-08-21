@@ -32,10 +32,6 @@ def eb_describe_environments(args):
         elif env['DateCreated'] < past_new_elastic_beanstalk_env:
             logger.info(f"{env['ApplicationName']} was deployed over {max_hours_elastic_beanstalk_new_environments} hours ago, skipping")
             logger.info(f"Date Created: {env['DateCreated']}\n")
-        # print(f"Application Name: {env['ApplicationName']}")
-        # print(f"Environment Name: {env['EnvironmentName']}")
-        # print(f"Date Created: {env['DateCreated']}")
-        # print(f"Date Status: {env['Status']}\n")
 
     total_time =  datetime.now(timezone.utc) - start_time
 
