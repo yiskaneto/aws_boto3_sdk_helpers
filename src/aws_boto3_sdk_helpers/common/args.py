@@ -71,5 +71,25 @@ def elastic_beanstalk_args():
     return args
 #################################################################################
 
+## Autoscaling (ASG)
+###############################################################################
+def autoscaling_args():
+    """
+    Description
+    -----------
+    Initializes the arguments needed to excecute operations on a given Autoscaling boto3 client.
+
+    Example
+    -------
+    an_elastic_beanstalk_function(cloudwatch_logs_args())
+    """
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--aws-region", required=True, help=AWS_REGION_CONST)
+    parser.add_argument("--asg-name", required=True, help="Austoscaling group name")
+    parser.add_argument("--health-check-type", required=False, help="Austoscaling group name")
+    args = parser.parse_args()
+    return args
+#################################################################################
+
 if __name__ == "__main__":
     print("Argument script file, nothing to show for now.")
